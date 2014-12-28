@@ -1,0 +1,39 @@
+{
+  "name": "x-ball.js",
+  "version": "0.1.9",
+  "homepage": "https://github.com/jfroffice/x-ball.js",
+  "description": "animation ball bounce test",
+  "authors": [
+    "jfroffice <me@jfroffice.me>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfroffice/x-ball.js.git"
+  },
+  "main": "dist/x-ball.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "component",
+    "enter",
+    "leave",
+    "scroll",
+    "resize",
+    "viewport",
+    "enterleave",
+    "x-enterleave",
+    "animation",
+    "css",
+    "reveal"
+  ]
+}

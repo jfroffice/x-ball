@@ -1,0 +1,91 @@
+/*@import "fonts";*/
+* {
+  box-sizing: border-box; }
+  *:before, *:after {
+    box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+html, body {
+  font-size: 1em;
+  height: 100%;
+  margin: 0; }
+
+body {
+  background-color: #d7dbe0;
+  font-family: "Open Sans", "Helvetica", sans-serif;
+  font-size: 1em;
+  font-weight: 400; }
+
+h1 {
+  font-family: 'Oswald', 'Gill Sans';
+  font-size: 2.3em; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.header {
+  color: #CD5E30; }
+
+h2 {
+  font-family: 'Open Sans Condensed', 'Helvetica Neue';
+  font-size: 1.3em;
+  color: white;
+  margin-top: 3.6em; }
+
+.subtitle {
+  position: relative;
+  -webkit-transform: translateX(400px) translateY(-200px);
+  transform: translateX(400px) translateY(-200px); }
+
+p {
+  color: #633e14;
+  line-height: 1.6em; }
+
+.mono {
+  font-family: 'PT Mono', sans-serif; }
+
+.container {
+  margin: 0 auto;
+  min-width: 960px;
+  width: 80%;
+  height: 100%;
+  margin-top: 50px; }
+
+@media screen and (max-width: 960px) {
+  .container {
+    min-width: 0;
+    width: 10%; } }
+
+.header span {
+  display: inline-block;
+  letter-spacing: -1px; }
+
+.ball {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  border-radius: 1.5em;
+  background-color: red;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+.toolbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 20px 10px; }
+
+.btn {
+  background-color: #333;
+  color: #DDD;
+  padding: 6px 10px;
+  margin: 0 6px;
+  font-size: 1.3em;
+  border-radius: 8px;
+  cursor: pointer; }
+
+.btn:hover {
+  color: yellow; }
