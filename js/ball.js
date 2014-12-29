@@ -1,14 +1,15 @@
 var nextFrame = (function () {
-  var frameFn = window.requestAnimationFrame 		||
+  var frameFn = window.requestAnimationFrame 		    ||
                 window.webkitRequestAnimationFrame 	||
-                window.mozRequestAnimationFrame 	||
+                window.mozRequestAnimationFrame 	  ||
                 function(cb) {
                   window.setTimeout(cb, 1000/60);
                 };
 
   return function(cb) {
     frameFn.call(window, cb);
-  }
+  };
+
 }());
 
 var stop = true,
@@ -21,7 +22,6 @@ var v0 = 0,
 
 var loop = function(t) {
 
-//  console.log('t :' + t);
   if (!t0) {
     t0 = t;
   }
@@ -35,30 +35,25 @@ var loop = function(t) {
   var vy = g * time - v0;
   var oldY = y;
   y = 0.5 * g * time * time - v0 * time + y0;
-  //console.log(y.toFixed(0));
-//  console.log('vy : ' + vy.toFixed(2));
-//  console.log('y : ' + y.toFixed(2));
+  //console.log('y: ' + y.toFixed(0));
+  //console.log('vy : ' + vy.toFixed(2));
 
   $('.ball').css('margin-top', y.toFixed(0) + 'px');
 
   if (y > 500) {
-  //  console.log(y);
-  //  console.log(oldY);
-    //stop = true;
 
-    // TODO: improve approximation colision point
-    y0 = oldY;
+    var newY = 1000 - y;
+    //console.log('new position: ' + newY);
+
+    y0 = newY;
     v0 = 0.7 * vy;
     t0 = false;
 
-    //console.log(v0);
-
-    if (v0 < 0.03) {
+    if (v0 < 0.04) {
       //console.log(v0);
       stop = true;
     }
   }
-
 
   if (!stop) {
     nextFrame(loop);
