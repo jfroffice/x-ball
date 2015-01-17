@@ -18,6 +18,8 @@ var stop = true,
     size = 25,
     size_2 = size / 2,
     bounce = 0.8,
+    lastTime = window.performance.now(),
+    delay, time;
     t0, t1,
     speed, nextStop,
     y, oldY, i, HEIGHT,
@@ -47,9 +49,6 @@ function getBoxShadow(deltaY) {
 
   return boxShadow;
 }
-
-var lastTime = window.performance.now(),
-    delay, time;
 
 function loop(t) {
 
@@ -129,8 +128,7 @@ function loop(t) {
     nextFrame(loop);
   }
 }
-/*
-document.querySelector('.js-btn').addEventListener('click', function() {*/
+
 stop = !stop;
 y = 0;
 y0 = 0;
@@ -143,17 +141,7 @@ $ball = document.querySelector('.ball');
 $shadow = document.querySelector('.shadow');
 $shadow.style.display = 'block';
 nextFrame(loop);
-/*});*/
-
-
-//startSimulation and pauseSimulation defined elsewhere
 
 document.addEventListener("visibilitychange", function() {
-  if (document.hidden) {
-    stop = true;
-    console.log('document hidden');
-  } else  {
-    stop = false;
-    console.log('document visible');
-  }
+  stop = document.hidden;
 });
